@@ -11,6 +11,7 @@
             :guides='guides'
             :view-mode='viewMode'
             drag-mode="crop"
+            :aspect-ratio='aspectRatio'
             :auto-crop-area='autoCropArea'
             :min-container-width='minContainerWidth'
             :min-container-height='minContainerHeight'
@@ -52,7 +53,8 @@ export default {
             minContainerHeight: 180,
             background: true,
             rotatable: true,
-            imgStyle: {width: '400px', 'height': '300px'}
+            imgStyle: {width: '400px', 'height': '300px'},
+            aspectRatio: 16 / 9
         }
     },
     methods: {
@@ -70,6 +72,8 @@ export default {
                 reader.onload = (event) => {
                     this.imgSrc = event.target.result
                     // rebuild cropperjs with the updated source
+                    console.log('this.$refs.cropper =')
+                    console.log(this.$refs.cropper)
                     this.$refs.cropper.replace(event.target.result)
                 }
 

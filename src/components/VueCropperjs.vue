@@ -53,8 +53,9 @@ export default {
             minContainerHeight: 180,
             background: true,
             rotatable: true,
-            imgStyle: {width: '400px', 'height': '300px'},
-            aspectRatio: 16 / 9
+            aspectRatio: NaN,
+            // aspectRatio: 16 / 9,
+            imgStyle: {width: '400px', 'height': '300px'}
         }
     },
     methods: {
